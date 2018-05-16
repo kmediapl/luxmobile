@@ -1,5 +1,6 @@
 <template>
     <div>
+      {{$route.params.idzlec}}
         <ul>
             <li>
 {{items.nazwa}}
@@ -42,11 +43,11 @@ export default {
     .then(response => {
       // JSON responses are automatically parsed.
        this.users = response.data
-       console.log(token);
+      //  console.log(token);
        
-      console.log(this.users.id);
+      // console.log(this.users.id);
       
-    axios.get('http://127.0.0.1:8000/api/mojezlecenia/dane/17/?token='+token)
+    axios.get('http://127.0.0.1:8000/api/mojezlecenia/dane/'+this.$route.params.idzlec+'/?token='+token)
     .then(response => {
       // JSON responses are automatically parsed.
    
@@ -64,7 +65,13 @@ export default {
     .catch(e => {
       wz.errors.push(e)
     })
+  },
+  methods: {
+    zrezlizujZlecenie(){
+        this.$router.push('/zrealizuj')
+    }
   }
+
 }
 </script>
 

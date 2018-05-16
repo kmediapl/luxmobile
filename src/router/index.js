@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import MojeZlecenia from '@/components/MojeZlecenia'
 import DaneZlecenia from '@/components/DaneZlecenia'
+import ZrealizujZlecenia from '@/components/ZrealizujZlecenia'
 
 Vue.use(Router)
 
@@ -20,9 +21,15 @@ export default new Router({
       component: Login
     },
     {
-      path: '/zlecenia',
+      path: '/zlecenia/:idzlec',
       name: 'DaneZlecenia',
       component: DaneZlecenia
+    }
+    ,
+    {
+      path: '/zlealizuj/:idzlec',
+      name: 'ZrealizujZlecenia',
+      component: ZrealizujZlecenia
     }
   ]
 })

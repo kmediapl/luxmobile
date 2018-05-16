@@ -5,7 +5,7 @@
  
   <v-toolbar color="indigo" dark fixed app>
       
-      <v-toolbar-title >Application</v-toolbar-title>
+      <v-toolbar-title >LUXWET Aplikacja mobilna</v-toolbar-title><v-btn color="error" @click="wyloguj">Wyloguj</v-btn>
        
     </v-toolbar>
   <v-content>
@@ -22,7 +22,14 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    wyloguj() {
+      localStorage.removeItem('token');
+      alert('Zostałeś wylogowany')
+       this.$router.push('/')
+    }
+  }
 }
 </script>
 
