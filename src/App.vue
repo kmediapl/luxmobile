@@ -5,7 +5,7 @@
  
   <v-toolbar color="indigo" dark fixed app>
       
-      <v-toolbar-title >LUXWET Aplikacja mobilna</v-toolbar-title><v-btn color="error" @click="wyloguj">Wyloguj</v-btn>
+      <v-toolbar-title >LUXWET Aplikacja mobilna</v-toolbar-title> <v-spacer></v-spacer><v-btn color="error" @click="wyloguj">Wyloguj</v-btn>
        
     </v-toolbar>
   <v-content>

@@ -23,6 +23,7 @@
 
             </li>
         </ul>
+        <v-btn color="indigo" to="/mz" dark>Powrót</v-btn><v-btn color="error" @click="zrezlizujZlecenie">Zrealizuj zlecenie</v-btn>
     </div>
 </template>
 

@@ -27,7 +27,7 @@ export default new Router({
     }
     ,
     {
-      path: '/zlealizuj/:idzlec',
+      path: '/zrealizuj',
       name: 'ZrealizujZlecenia',
       component: ZrealizujZlecenia
     }
