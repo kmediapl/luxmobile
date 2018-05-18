@@ -26,7 +26,8 @@ export default {
   methods: {
     wyloguj() {
       localStorage.removeItem('token');
-      alert('Zostałeś wylogowany')
+      this.$toasted.success('Zostałeś wylogowany', {duration:1500, position: "bottom-center", } )
+     
        this.$router.push('/')
     }
   }

@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     zrezlizujZlecenie(){
-        this.$router.push('/zrealizuj')
+        this.$router.push('/zrealizuj/'+this.$route.params.idzlec)
     }
   }
 

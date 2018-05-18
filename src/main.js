@@ -6,7 +6,8 @@ import router from './router'
 import Vuetify from 'vuetify'
 import axios from 'axios'
 import 'babel-polyfill'
- 
+import Toasted from 'vue-toasted';
+Vue.use(Toasted)
 Vue.use(Vuetify)
 
 Vue.config.productionTip = false
