@@ -1,10 +1,13 @@
 <template>
-    <div>{{picker}}
-      <h1>1.Data realizacji</h1>
+    <div>
+
+      <h2>1.Data rozpoczęcia</h2>
          <v-date-picker color="indigo" v-model="picker" :landscape="landscape" :reactive="reactive"></v-date-picker>
-         <h1>2. Zrelizował</h1>
-<h1>3. Dodatkowe dane</h1>
-<p>ddddd</p>
+         <h2>2.Data zakończenia</h2>
+         <v-date-picker color="indigo" v-model="picker2" :landscape="landscape" :reactive="reactive"></v-date-picker>
+        
+<h2>3. Dodatkowe dane</h2>
+
  <v-text-field
           name="input-2"
           label="Ilość kilometrów"
@@ -51,7 +54,7 @@
 
 <v-btn color="indigo" dark @click="dodajMaterial">Dodaj materiał</v-btn>
 <hr/>
-<v-btn color="error" dark>Zamknij zlecenie</v-btn>
+<v-btn color="indigo" to="/mz" dark>Powrót</v-btn> <v-btn color="error" dark @click="zrealizujzlecenie">Zamknij zlecenie</v-btn>
   </div>
 </template>
 
@@ -61,8 +64,10 @@ import axios from 'axios';
   export default {
     data () {
       return {
+        users:'',
         ilosc:'',
         picker: null,
+        picker2: null,
         landscape: false,
         reactive: false,
          e1: 0,
@@ -74,6 +79,9 @@ import axios from 'axios';
     },
     created(){
       const token=localStorage.getItem('token')
+      if (token==null){
+         this.$router.push('/')
+      }
           axios.get('http://127.0.0.1:8000/api/materialy/?token='+token)
         .then(response => {
 
@@ -112,14 +120,21 @@ import axios from 'axios';
      
    
         
+      },
+      zrealizujzlecenie (){
+        axios.post('http://127.0.0.1:8000/api/zrealizujzlecenie/'+this.$route.params.idzlec)
+     .then(response => {
+console.log(response);
+this.$router.push('/mz')
+     })
+      .catch(error=>{
+          console.log(error);
+          
+        })
       }
     }
   }
 </script>
 
 <style>
-.toasted {
-
-  
-}
 </style>

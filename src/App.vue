@@ -5,7 +5,7 @@
  
   <v-toolbar color="indigo" dark fixed app>
       
-      <v-toolbar-title >LUXWET Aplikacja mobilna</v-toolbar-title> <v-spacer></v-spacer><v-btn color="error" @click="wyloguj">Wyloguj</v-btn>
+      <v-toolbar-title >LUXWET Aplikacja mobilna</v-toolbar-title> <v-spacer></v-spacer><v-btn color="error" @click="wyloguj" >Wyloguj</v-btn>
        
     </v-toolbar>
   <v-content>
@@ -22,7 +22,14 @@
 
 <script>
 export default {
-  name: 'App',
+  name: 'App'
+  ,
+//   created(){
+//  const token=localStorage.getItem('token')
+//       if (token==null){
+//          disabled:false;
+//       }
+//   },
   methods: {
     wyloguj() {
       localStorage.removeItem('token');

@@ -12,6 +12,14 @@ Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 
+// router.beforeEach((to, from, next) => {
+//   if(!localStorage.getItem('token')){
+   
+//     next( this.$router.push('/'));
+//   }
+//   next();
+  
+// })
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
